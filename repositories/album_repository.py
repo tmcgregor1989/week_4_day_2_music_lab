@@ -10,8 +10,8 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        artist = artist_repository.select(row['artist_id'])
-        album = Album(row['title'], artist, row['genre'], row['id'] )
+        artist = artist_repository.select(row['artist'])
+        album = Album(row['title'], artist, row['genre'], row['id'])
         albums.append(album)
     return album 
 
@@ -40,7 +40,21 @@ def select(id):
     values = [id]
     result = run_sql(sql, values)[0]
     if result is not None:
-        artist = artist_repository.select(result['artist_id'])
+        artist = artist_repository.select(result['id'])
         album = Album(result['title'], artist, result['genre'], result['id'])
     return album
 
+def delete_all():
+    sql = "DELETE FROM albums"
+    run_sql(sql)
+
+
+# def select_albums_by_artist(artist):
+#     albums = []
+#     sql = "SELECT * FROM albums WHERE artist = %s"
+#     values = [artist]
+#     result = run_sql(sql, values)[0]
+#     if result is not None:
+#         artist = artist_repository.select(result['id'])
+#         album = Album(result['title'], artist, result['genre'], result['id'])
+#     return albums
