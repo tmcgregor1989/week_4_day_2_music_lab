@@ -5,28 +5,28 @@ import repositories.album_repository as album_repository
 import repositories.artist_repository as artist_repository
 
 
-# artist_1 = Artist("KISS")
-# artist_repository.save(artist_1)
+artist_1 = Artist("KISS")
+artist_repository.save(artist_1)
 
-# artist_2 = Artist("Meatloaf")
-# artist_repository.save(artist_2)
+artist_2 = Artist("Meatloaf")
+artist_repository.save(artist_2)
 
 
-# album_1 = Album("Bat Out of Hell", artist_2, "power rock")
-# album_repository.save(album_1)
+album_1 = Album("Bat Out of Hell", artist_2, "power rock")
+album_repository.save(album_1)
 
-# album_2 = Album("Bat Out of Hell II", artist_2, "power rock")
-# album_repository.save(album_2)
+album_2 = Album("Bat Out of Hell II", artist_2, "power rock")
+album_repository.save(album_2)
 
-# album_3 = Album("Love Gun", artist_1, "Glam Rock")
-# album_repository.save(album_3)
+album_3 = Album("Love Gun", artist_1, "Glam Rock")
+album_repository.save(album_3)
 
-# album_4 = Album("Bat Out of Hell III", artist_2, "power rock-ish")
-# album_repository.save(album_4)
+album_4 = Album("Bat Out of Hell III", artist_2, "power rock-ish")
+album_repository.save(album_4)
 
-# album_repository.delete_all()
+album_repository.delete_all()
 
-# artist_repository.delete_all()
+artist_repository.delete_all()
 
 found_album = album_repository.select(1)
 
